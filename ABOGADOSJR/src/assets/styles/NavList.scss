@@ -1,0 +1,152 @@
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-items {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin: 0;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-family: 'Arial', sans-serif;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 8px 0;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gold);
+    transition: width 0.3s ease;
+  }
+
+  &:hover, &.active {
+    color: var(--gold);
+
+    &::after {
+      width: 100%;
+    }
+  }
+}
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.social-link {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(201, 169, 97, 0.2);
+    color: var(--gold);
+    transform: translateY(-3px);
+  }
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .nav-items {
+    gap: 20px;
+  }
+
+  .nav-link {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 968px) {
+  .nav-list {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 280px;
+    height: calc(100vh - 70px);
+    background: var(--primary-blue);
+    flex-direction: column;
+    padding: 40px 30px;
+    gap: 30px;
+    transition: right 0.4s ease;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+
+    &.open {
+      right: 0;
+    }
+  }
+
+  .nav-items {
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+  }
+
+  .nav-item {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .nav-link {
+    display: block;
+    padding: 16px 0;
+    font-size: 13px;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  .social-links {
+    gap: 20px;
+    justify-content: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+  }
+
+  .social-link {
+    width: 42px;
+    height: 42px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+}

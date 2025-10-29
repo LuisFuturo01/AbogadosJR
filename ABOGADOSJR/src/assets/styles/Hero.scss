@@ -1,0 +1,151 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.hero-background {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.gold-stripe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 8px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--gold) 0%, var(--light-gold) 50%, var(--gold) 100%);
+  z-index: 10;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--primary-blue);
+  }
+}
+
+.hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 120px 60px 80px;
+}
+
+.hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  padding-left: 40px;
+}
+
+.text-content {
+  flex: 1;
+  max-width: 550px;
+}
+
+.hero-title {
+  font-size: 72px;
+  font-weight: 300;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 28px;
+  letter-spacing: 3px;
+
+  .highlight {
+    color: var(--gold);
+    font-weight: 700;
+    letter-spacing: 10px;
+  }
+}
+
+.hero-description {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 17px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+  font-family: 'Arial', sans-serif;
+}
+
+.cta-button {
+  background: var(--gold);
+  color: var(--primary-blue);
+  border: none;
+  padding: 16px 40px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(201, 169, 97, 0.3);
+
+  &:hover {
+    background: var(--light-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(201, 169, 97, 0.5);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+}
+
+.scales-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  img {
+    max-width: 450px;
+    width: 100%;
+    height: auto;
+    animation: float 6s ease-in-out infinite;
+    
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@media (max-width: 968px) {
+  .hero-container {
+    padding: 100px 30px 60px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 50px;
+    padding-left: 20px;
+  }
+
+  .text-content {
+    max-width: 100%;
+  }
+
+  .hero-title {
+    font-size: 52px;
+  }
+  
+  .scales-image img {
+    max-width: 320px;
+    mix-blend-mode: multiply;
+    object-fit: cover;
+  }
+}

@@ -1,0 +1,146 @@
+.services {
+  padding: 120px 60px;
+  background: var(--white);
+}
+
+.services-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-label {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+  font-family: 'Arial', sans-serif;
+}
+
+.section-title {
+  font-size: 48px;
+  color: var(--black);
+  font-weight: 300;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+
+  .highlight {
+    color: var(--gold);
+    font-weight: 600;
+  }
+}
+
+.section-description {
+  font-size: 17px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-family: 'Arial', sans-serif;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.service-card {
+  padding: 50px 35px;
+  background: var(--white);
+  border: 1px solid #e8e8e8;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--light-gold));
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: var(--gold);
+
+    &::before {
+      transform: translateX(0);
+    }
+
+    .service-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+  }
+}
+
+.service-icon {
+  font-size: 48px;
+  margin-bottom: 25px;
+  display: inline-block;
+  transition: transform 0.4s ease;
+}
+
+.service-title {
+  font-size: 24px;
+  color: var(--primary-blue);
+  font-weight: 600;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.service-description {
+  font-size: 15px;
+  color: #666;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  font-family: 'Arial', sans-serif;
+}
+
+.service-link {
+  background: transparent;
+  border: none;
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  font-family: 'Arial', sans-serif;
+
+  &:hover {
+    color: var(--primary-blue);
+    transform: translateX(5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .services {
+    padding: 80px 30px;
+  }
+
+  .section-title {
+    font-size: 36px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .service-card {
+    padding: 40px 30px;
+  }
+}
