@@ -6,32 +6,55 @@
 }
 
 .hero-background {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  background: linear-gradient(135deg, var(--secondary-blue) 12%, var(--primary-blue) 20%,var(--third-blue) 60%,var(--secondary-blue) 100%);
   width: 100%;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center
 }
 
 .gold-stripe {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
-  width: 8px;
+  width: 30px;
   height: 100%;
-  background: linear-gradient(to bottom, var(--gold) 0%, var(--light-gold) 50%, var(--gold) 100%);
+  background: linear-gradient(
+    to bottom,
+    var(--gold) 0%,
+    var(--gold) 30%,
+    var(--light-gold) 50%,
+    var(--gold) 80%,
+    var(--gold) 100%
+  );
   z-index: 10;
 
-  &::after {
-    content: '';
-    position: absolute;
-    left: 8px;
+  &::before {
+    content: "";
+    position: fixed;
+    left: 0;
     top: 0;
-    width: 3px;
-    height: 100%;
-    background: var(--primary-blue);
+    width: 50px;
+    height: 100vh;
+    opacity: 0.7;
+    background-image: url(../images/svg/lawyer-svgrepo-com.svg);
+    background-repeat: repeat-y;
+    background-size: 40px;
+    background-position: 5px 0;
+    mask-image: linear-gradient(
+      180deg,
+      rgb(0, 0, 0) 0 30px,
+      transparent 1px
+    );
+    mask-size: 30px 120px;
+    mask-repeat: repeat-y;
+    
   }
 }
+
+
 
 .hero-container {
   max-width: 1400px;
@@ -110,7 +133,7 @@
     width: 100%;
     height: auto;
     animation: float 6s ease-in-out infinite;
-    
+
   }
 }
 
@@ -145,7 +168,5 @@
   
   .scales-image img {
     max-width: 320px;
-    mix-blend-mode: multiply;
-    object-fit: cover;
   }
 }

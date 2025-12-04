@@ -24,7 +24,6 @@ const Header: React.FC = () => {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="header-container">
         <Link to="/" className="logo">
-          <span className="logo-bullet">•</span>
           <span className="logo-text">AUREA LEGEA & TECH</span>
         </Link>
         

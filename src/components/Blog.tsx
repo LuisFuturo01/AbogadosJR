@@ -8,7 +8,6 @@ interface BlogPost {
   category: string;
   date: string;
   author: string;
-  image: string;
   readTime: string;
 }
 
@@ -21,8 +20,7 @@ const Blog: React.FC = () => {
       category: 'Derecho Corporativo',
       date: '15 Oct, 2024',
       author: 'Michael Shaffer',
-      image: 'TU_IMAGEN_BLOG1_URL',
-      readTime: '5 min'
+      readTime: '5 min',
     },
     {
       id: 2,
@@ -31,7 +29,6 @@ const Blog: React.FC = () => {
       category: 'Derecho Familiar',
       date: '10 Oct, 2024',
       author: 'Sarah Johnson',
-      image: 'TU_IMAGEN_BLOG2_URL',
       readTime: '7 min'
     },
     {
@@ -41,9 +38,9 @@ const Blog: React.FC = () => {
       category: 'Propiedad Intelectual',
       date: '5 Oct, 2024',
       author: 'Emily Chen',
-      image: 'TU_IMAGEN_BLOG3_URL',
       readTime: '6 min'
-    }
+    },
+    
   ];
 
   return (
@@ -60,10 +57,6 @@ const Blog: React.FC = () => {
         <div className="blog-grid">
           {posts.map(post => (
             <article key={post.id} className="blog-card">
-              <div className="blog-image">
-                <img src={post.image} alt={post.title} />
-                <span className="blog-category">{post.category}</span>
-              </div>
               <div className="blog-content">
                 <div className="blog-meta">
                   <span className="blog-date">
@@ -81,7 +74,6 @@ const Blog: React.FC = () => {
                 <p className="blog-excerpt">{post.excerpt}</p>
                 <div className="blog-footer">
                   <span className="blog-author">Por {post.author}</span>
-                  <button className="blog-read-more">Leer Más →</button>
                 </div>
               </div>
             </article>
